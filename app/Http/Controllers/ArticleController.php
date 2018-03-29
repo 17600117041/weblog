@@ -5,14 +5,18 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Repositories\ArticleRepository;
+use App\Repositories\TagRepository;
 
 class ArticleController extends Controller
 {
     protected $article;
 
-    public function __construct(ArticleRepository $article)
+    protected $tag;
+
+    public function __construct(ArticleRepository $article, TagRepository $tag)
     {
         $this->article = $article;
+        $this->tag = $tag;
     }
 
     /**
@@ -23,7 +27,8 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = $this->article->page(config('blog.article.number'), config('blog.article.sort'), config('blog.article.sortColumn'));
-        return view('article.index', compact('articles'));
+        $tags = $this->tag->all();
+        return view('article.index', compact('articles'), compact('tags'));
     }
 
     /**
