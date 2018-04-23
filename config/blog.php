@@ -57,7 +57,7 @@ return [
             'open' => false,
             'url'  => 'https://twitter.com/pigjian'
         ],
-        'meta' => '© ZG Blog 2017. Powered By Da Zhang',
+        'meta' => '京ICP备18016312号-1 © ZG Blog 2017. Powered By Da Zhang',
     ],
 
     'license' => 'Powered By Da Zhang.<br/>This article is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.',
